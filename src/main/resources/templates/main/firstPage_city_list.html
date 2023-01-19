@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+            body {background-color: powderblue;}
+            h1   {color: blue;}
+    </style>
+</head>
+<body>
+<table id="cityDataTable" class="table">
+  <tr>
+    <th class="th">#</th>
+    <th class="th">Id</th>
+    <th class="th">City</th>
+    <th class="th">Country Code</th>
+    <th class="th">District</th>
+    <th class="th">Population</th>
+  </tr>
+  <tr th:each="city : ${key_city_list}">
+    <td class="td" th:text="${cityStat.index+1}"></td>
+    <td class="td" th:text="${city.cityId}"></td>
+    <td class="td" th:text="${city.cityName}"></td>
+    <td class="td" th:text="${city.cityCountryCode}"></td>
+    <td class="td" th:text="${city.cityDistrict}"></td>
+    <td class="td" th:text="${city.cityPopulation}"></td>
+  </tr>
+</table>
+</body>
+</html>
